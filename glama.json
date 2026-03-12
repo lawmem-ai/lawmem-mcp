@@ -1,0 +1,29 @@
+{
+  "name": "lawmem-ai/lawmem-mcp",
+  "title": "LawMem — Legal Memory for AI Agents",
+  "description": "LawMem gives legal AI agents persistent, searchable memory via MCP. Store case notes, client context, research findings, and matter history — recalled semantically when relevant. Namespace-isolated, audit-logged, GDPR-compliant.",
+  "homepage": "https://lawmem.ai",
+  "license": "MIT",
+  "category": ["knowledge-and-memory", "legal-and-compliance", "rag-systems"],
+  "tags": ["memory", "legal", "knowledge", "agents"],
+  "author": {
+    "name": "lawmem-ai",
+    "url": "https://lawmem.ai"
+  },
+  "transport": [
+    {
+      "type": "http",
+      "url": "https://api.lawmem.ai/mcp/"
+    }
+  ],
+  "authentication": {
+    "type": "bearer",
+    "description": "API key from https://lawmem.ai/signup.html"
+  },
+  "tools": [
+    {"name": "memory_store", "description": "Store a memory with text, namespace, and optional metadata"},
+    {"name": "memory_search", "description": "Semantic search across stored memories"},
+    {"name": "memory_list", "description": "List memories by namespace"},
+    {"name": "memory_delete", "description": "Delete a memory by ID"}
+  ]
+}
