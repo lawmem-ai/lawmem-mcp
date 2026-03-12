@@ -1,4 +1,7 @@
 # LawMem — Legal Memory for AI Agents
+<a href="https://glama.ai/mcp/servers/lawmem-ai/lawmem-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/lawmem-ai/lawmem-mcp/badge" />
+</a>
 **LawMem.ai** gives legal AI agents persistent, searchable memory via MCP. Store case notes, client context, research findings, and matter history — recalled semantically when relevant.
 
 ## Quickstart
