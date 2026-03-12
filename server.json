@@ -1,0 +1,29 @@
+{
+  name: lawmem,
+  version: 1.0.0,
+  description: Persistent semantic memory-as-a-service for legal AI agents. Store and recall case notes, client context, and matter history via MCP.,
+  homepage: https://lawmem.ai,
+  author: Pablo Davidov,
+  license: MIT,
+  keywords: [memory, legal, knowledge, agents],
+  mcp: {
+    transport: http,
+    url: https://api.lawmem.ai/mcp/,
+    auth: {
+      type: bearer
+    }
+  },
+  installation: {
+    config: {
+      mcpServers: {
+        lawmem: {
+          type: http,
+          url: https://api.lawmem.ai/mcp/,
+          headers: {
+            Authorization: Bearer YOUR_LAWMEM_API_KEY
+          }
+        }
+      }
+    }
+  }
+}
