@@ -1,26 +1,49 @@
 {
-  name: lawmem,
-  version: 1.0.0,
-  description: Persistent semantic memory-as-a-service for legal AI agents. Store and recall case notes, client context, and matter history via MCP.,
-  homepage: https://lawmem.ai,
-  author: Pablo Davidov,
-  license: MIT,
-  keywords: [memory, legal, knowledge, agents],
-  mcp: {
-    transport: http,
-    url: https://api.lawmem.ai/mcp/,
-    auth: {
-      type: bearer
+  "name": "lawmem",
+  "version": "1.0.0",
+  "description": "Persistent semantic memory-as-a-service for legal AI agents. Store and recall case notes, client context, and matter history via MCP.",
+  "homepage": "https://lawmem.ai",
+  "author": "Pablo Davidov",
+  "license": "MIT",
+  "keywords": [
+    "memory",
+    "legal",
+    "knowledge",
+    "agents"
+  ],
+  "mcp": {
+    "transport": "http",
+    "url": "https://api.lawmem.ai/mcp/",
+    "auth": {
+      "type": "bearer"
     }
   },
-  installation: {
-    config: {
-      mcpServers: {
-        lawmem: {
-          type: http,
-          url: https://api.lawmem.ai/mcp/,
-          headers: {
-            Authorization: Bearer YOUR_LAWMEM_API_KEY
+  "tools": [
+    {
+      "name": "store_memory",
+      "description": "Store a legal text memory for later semantic recall. The text is embedded and stored in a vector database. Returns the memory ID, token count, and a preview of the stored text. Use matter_id to scope memories to a specific case or client matter."
+    },
+    {
+      "name": "recall_memories",
+      "description": "Semantically search stored legal memories using natural language. Returns the most relevant results ranked by cosine similarity. Optionally filter by matter_id to restrict results to a specific case."
+    },
+    {
+      "name": "delete_memory",
+      "description": "Permanently delete a stored memory by its UUID. Hard delete for GDPR right-to-erasure compliance. Removes from both vector store and database. Cannot be undone."
+    },
+    {
+      "name": "get_stats",
+      "description": "Get usage statistics for your tenant: total memory count, today's API call counts (store/recall/read), all-time totals, and your wallet balance."
+    }
+  ],
+  "installation": {
+    "config": {
+      "mcpServers": {
+        "lawmem": {
+          "type": "http",
+          "url": "https://api.lawmem.ai/mcp/",
+          "headers": {
+            "Authorization": "Bearer YOUR_LAWMEM_API_KEY"
           }
         }
       }

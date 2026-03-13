@@ -26,10 +26,10 @@ Get your API key at [lawmem.ai/signup](https://lawmem.ai/signup.html) — free t
 ## Tools
 | Tool | Description |
 |---|---|
-| `memory_store` | Store a memory with text, namespace, and optional metadata |
-| `memory_search` | Semantic search across stored memories |
-| `memory_list` | List memories by namespace |
-| `memory_delete` | Delete a memory by ID |
+| `store_memory` | Store a memory with text, namespace, and optional metadata |
+| `recall_memories` | Semantic search across stored memories |
+| `delete_memory` | Delete a memory by ID |
+| `get_stats` | Get memory count and usage statistics |
 
 ## Auth
 Bearer token — get your API key at [lawmem.ai/signup](https://lawmem.ai/signup.html).
